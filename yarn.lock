@@ -3736,7 +3736,7 @@ react-native-gesture-handler@1.0.9:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
-"react-native-maps@github:expo/react-native-maps#v0.22.1-exp.0":
+react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
   resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
 
@@ -3762,9 +3762,9 @@ react-native-svg@8.0.8, react-native-svg@^8.0.0:
     lodash "^4.16.6"
     pegjs "^0.10.0"
 
-react-native-tydligval@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-tydligval/-/react-native-tydligval-1.0.2.tgz#a561747e4b257c76acd2b75c66c57bda569e8cc7"
+react-native-tydligval@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-tydligval/-/react-native-tydligval-1.0.3.tgz#edf1c0b059f79c5dfb8217a3d9c778e29aa2fbf2"
   dependencies:
     react-native-svg "^8.0.0"
     styled-components "^3.2.1"
