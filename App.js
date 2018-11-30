@@ -10,6 +10,8 @@ import {
 } from "react-native";
 import ValPicker from "react-native-tydligval";
 
+const fontColor = "#000";
+
 const createItems = many => {
   const items = [];
   let i = 0;
@@ -54,58 +56,55 @@ class App extends React.Component {
       <View style={styles.container}>
         <Image
           style={styles.absolute}
-          source={{
-            uri:
-              "https://img.freepik.com/free-vector/technology-background-with-gradient-colors_23-2147837710.jpg?size=338c&ext=jpg"
-          }}
+          source={require("./assets/desert.jpg")}
         />
         <Fragment>
-          <Text style={{ color: "#cccccc" }}>Default selector</Text>
-          <Text style={{ color: "#cccccc" }}>
-            Selected value: {this.state.selectionOne}
-          </Text>
-          <ValPicker
-            source={{
-              uri:
-                "https://img.freepik.com/free-vector/technology-background-with-gradient-colors_23-2147837710.jpg?size=338c&ext=jpg"
-            }}
-            key="picker-one"
-            onSelect={selected => this.onSelect(selected)}
-            items={items}
-          />
-
-          <Text style={{ color: "#cccccc" }}>Customized selector</Text>
-          <Text style={{ color: "#cccccc" }}>
-            Selected value: {this.state.selectionTwo}
-          </Text>
-          <ValPicker
-            source={{
-              uri:
-                "https://img.freepik.com/free-vector/technology-background-with-gradient-colors_23-2147837710.jpg?size=338c&ext=jpg"
-            }}
-            key="picker-two"
-            onSelect={selected => this.onSelectOther(selected)}
-            items={items}
-            triggerButton={(items, onPress, selected) => (
-              <TouchableOpacity onPress={onPress}>
-                <Text style={{ color: "#ffffff" }}>
-                  {selected ? selected.label : "Select a value"}
-                </Text>
-              </TouchableOpacity>
-            )}
-            selectButton={(item, onSelect) => (
-              <TouchableOpacity key={item.id} onPress={() => onSelect(item)}>
-                <Text style={{ color: "#cccccc" }}>{item.label}</Text>
-              </TouchableOpacity>
-            )}
-            closeButton={onClose => (
-              <TouchableOpacity onPress={() => onClose()}>
-                <Text style={{ color: "#ffffff", paddingBottom: 55 }}>
-                  Close ME
-                </Text>
-              </TouchableOpacity>
-            )}
-          />
+          {/* DEFAULT */}
+          <Fragment>
+            <Text style={{ color: fontColor }}>Default selector</Text>
+            <Text style={{ color: fontColor }}>
+              Selected value: {this.state.selectionOne}
+            </Text>
+            <ValPicker
+              source={require("./assets/desert.jpg")}
+              key="picker-one"
+              onSelect={selected => this.onSelect(selected)}
+              items={items}
+              color={fontColor}
+            />
+          </Fragment>
+          {/* CUSTOM */}
+          <Fragment>
+            <Text style={{ color: fontColor }}>Customized selector</Text>
+            <Text style={{ color: fontColor }}>
+              Selected value: {this.state.selectionTwo}
+            </Text>
+            <ValPicker
+              source={require("./assets/desert.jpg")}
+              key="picker-two"
+              onSelect={selected => this.onSelectOther(selected)}
+              items={items}
+              triggerButton={(items, onPress, selected) => (
+                <TouchableOpacity onPress={onPress}>
+                  <Text style={{ color: fontColor, fontWeight: "bold" }}>
+                    {selected ? selected.label : "Select a value -- click here"}
+                  </Text>
+                </TouchableOpacity>
+              )}
+              selectButton={(item, onSelect) => (
+                <TouchableOpacity key={item.id} onPress={() => onSelect(item)}>
+                  <Text style={{ color: fontColor }}>{item.label}</Text>
+                </TouchableOpacity>
+              )}
+              closeButton={onClose => (
+                <TouchableOpacity onPress={() => onClose()}>
+                  <Text style={{ color: fontColor, paddingBottom: 55 }}>
+                    Close ME
+                  </Text>
+                </TouchableOpacity>
+              )}
+            />
+          </Fragment>
         </Fragment>
       </View>
     );

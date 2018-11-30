@@ -1,6 +1,8 @@
 node_modules/**/*
+.yalc/**/*
 .expo/*
 npm-debug.*
+yalc.lock
 *.jks
 *.p12
 *.key
